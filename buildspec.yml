@@ -1,10 +1,10 @@
 version: 0.1
 
-phases:
-  build:
+ phases:
     commands:
-      - echo NOthing to do yet
-    artifacts:
-    files:
-      -index.html
-     
+   -eco Nothing to do yet
+artifacts:
+  files:
+    - index.html
+    - styles/*
+    - images/*
