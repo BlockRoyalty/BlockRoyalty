@@ -1,10 +1,11 @@
 # BlockRoyalty
 
-Hi, Welcome to Block Royalty Github Repository.
-Technology use:
-AWS and ReactJS.  
+Hi, Welcome to Block Royalty Github Repository.  
 
 ## Technology Used
 Brew
-Git and github
+Git 
+AWS 
+ReactJS
+and github
 SSH
