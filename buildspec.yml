@@ -6,6 +6,7 @@ phases:
   - echo Nothing to do yet
  artificats: 
  - index.html
- - styles/*
+ - styles/main.css
  - images/*
  base-directory: 'output'
+ 
