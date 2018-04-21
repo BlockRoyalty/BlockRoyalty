@@ -9,4 +9,3 @@ phases:
     - index.html
     - styles/main.css
     - images/*
- base-directory: 'output'
