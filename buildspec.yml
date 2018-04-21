@@ -4,9 +4,9 @@ phases:
  build:
   commands:
   - echo Nothing to do yet
- artificats: 
- - index.html
- - styles/main.css
- - images/*
+ artifacts:
+  files: 
+    - index.html
+    - styles/main.css
+    - images/*
  base-directory: 'output'
- 
