@@ -1,11 +1,11 @@
---- 
-phases: 
-  build: 
-    artifacts: 
-      files: 
-        - index.html
-        - images/*
-        - styles/*
-    commands: 
-      - "echo Nothing to do yet"
 version: 0.1
+
+phases:
+ build:
+  commands:
+  - echo Nothing to do yet
+ artificats: 
+ - index.html
+ - styles/*
+ - images/*
+ base-directory: 'output'
