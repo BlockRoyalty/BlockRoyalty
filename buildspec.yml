@@ -9,3 +9,4 @@ artifacts:
     - index.html
     - styles/main.css
     - images/*
+    - upload-website-to-s3.py
