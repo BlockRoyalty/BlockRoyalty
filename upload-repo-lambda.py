@@ -1,7 +1,6 @@
 import boto3
 import StringIO
 import zipfile
-import mimetypes
 
 def lambda_handler(event, context):
     sns = boto3.resource('sns')
@@ -31,8 +30,7 @@ def lambda_handler(event, context):
         with zipfile.ZipFile(website_zip) as myzip:
             for nm in myzip.namelist():
                 obj = myzip.open(nm)
-                website_bucket.upload_fileobj(obj, nm,
-                ExtraArgs={'ContentType': mimetypes.guess_type(nm)[0]})
+                website_bucket.upload_fileobj(obj, nm)
                 website_bucket.Object(nm).Acl().put(ACL='public-read')
 
         print "Job done!"
@@ -44,4 +42,4 @@ def lambda_handler(event, context):
         topic.publish(Subject="Portfolio Deploy Failed", Message="The Website was not updated successfully")
         raise
 
-    return 'Hello from Lambda' 
+    return 'Hello from Lambda'
