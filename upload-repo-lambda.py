@@ -10,7 +10,7 @@ def lambda_handler(event, context):
         "objectKey": 'blockroyaltybuild.zip'
     }
     try:
-        job = event.get("CodePipeline.job")
+        job = event.get("codepipeline.job")
 
         if job:
             for artifact in job["data"]["inputArtifacts"]:
@@ -37,7 +37,7 @@ def lambda_handler(event, context):
         topic.publish(Subject="Website Deployed", Message="Website deployed successfully!")
         if job:
             codepipeline = boto3.client('codepipeline')
-            codepipeline.put_job_success_result(jobID=jobID["id"])
+            codepipeline.put_job_success_result(jobID=job["id"])
     except:
         topic.publish(Subject="Portfolio Deploy Failed", Message="The Website was not updated successfully")
         raise
