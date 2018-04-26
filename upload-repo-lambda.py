@@ -15,7 +15,7 @@ def lambda_handler(event, context):
         if job:
             for artifact in job["data"]["inputArtifacts"]:
                 if  artifact["name"] == "MyAppBuild":
-                     location = artifact["Location"]["s3Location"]
+                     location = artifact["location"]["s3Location"]
 
         print "Building website from " + str(location)
 
