@@ -4,9 +4,10 @@ import zipfile
 
 def lambda_handler(event, context):
     sns = boto3.resource('sns')
-    topic = sns.Topic('arn:aws:sns:us-east-1:240748614592:DeployBlockWebsiteTopic')
+    topic = sns.Topic('arn:aws:sns:us-east-1:240748614592:WebsteDeployed')
+    
     location = {
-        "bucketName":'websitebuild.blockroyalty.com',
+        "bucketName":'build.blockroyalty.com',
         "objectKey": 'blockroyaltybuild.zip'
     }
     try:
@@ -21,7 +22,7 @@ def lambda_handler(event, context):
 
         s3 = boto3.resource('s3')
 
-        website_bucket = s3.Bucket('website.blockroyalty.com')
+        website_bucket = s3.Bucket('www.blockroyalty.com')
         build_bucket = s3.Bucket(location["bucketName"])
 
         website_zip = StringIO.StringIO()
@@ -42,4 +43,4 @@ def lambda_handler(event, context):
         topic.publish(Subject="Portfolio Deploy Failed", Message="The Website was not updated successfully")
         raise
 
-    return 'Hello from Lambda'
+    return 'For more information ask Pascal'
