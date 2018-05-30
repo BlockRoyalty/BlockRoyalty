@@ -11,7 +11,7 @@ def lambda_handler(event, context):
         "objectKey": 'blockroyaltybuild.zip'
     }
     try:
-        job = event.get("codepipeline.job")
+        job = event.get("codePipeline.job")
 
         if job:
             for artifact in job["data"]["inputArtifacts"]:
